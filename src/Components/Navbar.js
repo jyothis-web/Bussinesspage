@@ -109,7 +109,7 @@ function App() {
         sx={{
           backgroundColor: "blue",
           color: "white",
-          borderRadius: 10,
+          borderRadius: "8px",
           textAlign: "center",
           padding: 1,
           margin: 2,

@@ -9,7 +9,7 @@ import "./swiper.css";
 
 const Section5 = () => {
   return (
-    <Box  marginLeft={".5cm"} sx={{marginTop:"6cm"}}>
+    <Box  marginLeft={".5cm"} marginTop={{xs:"2cm",sm:"6.5cm",md:"9cm"}}>
       <Typography variant="h3" marginBottom={3} textAlign={"center"}>
         What they say about us
       </Typography>

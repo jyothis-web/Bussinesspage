@@ -38,6 +38,7 @@ const Banner = () => {
         justifyContent={"space-between"}
         textAlign={{ md: "center", xs: "center", lg: "start" }}
         alignItems={{ md: "center", xs: "center" }}
+        
         sx={{ paddingTop: "120px", backgroundColor: "#f3f7fe" }}
       >
         <Box
@@ -106,7 +107,7 @@ const Banner = () => {
             >
               <Paper
                 elevation={"5"}
-                sx={{ padding: ".3cm 0", width: "8cm", marginTop: ".5cm" }}
+                sx={{ padding: ".3cm 0", width: "90%", marginTop: ".5cm" }}
               >
                 {" "}
                 <Typography
@@ -115,7 +116,7 @@ const Banner = () => {
                 >
                   Register using email address
                 </Typography>
-                <Bluebtn sx={{ padding: "10px 80px" }}>
+                <Bluebtn sx={{width:"80%"}}>
                   start free trail
                 </Bluebtn>
               </Paper>

@@ -11,7 +11,7 @@ const Section2 = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
         position={"relative"}
-        sx={{paddingTop:"2cm"}}
+        sx={{marginTop:"3cm"}}
       >
         <Box
           sx={{ position: "relative" }}
@@ -23,10 +23,10 @@ const Section2 = () => {
             style={{ maxWidth: "100%", height: "auto" }}
           />
           <Box
-            width={{ xs: "230px", sm: "280px", md: "240px", lg: "350px" }}
+            width={{ xs: "200px", sm: "280px", md: "240px", lg: "350px" }}
             position="absolute"
-            top={{ xs: "190px", sm: "320px", md: "250px", lg: "300px" }}
-            left={{ xs: "80px", sm: "120px" }}
+            top={{ xs: "200px", sm: "320px", md: "250px", lg: "300px" }}
+            left={{ xs: "95px", sm: "120px" }}
           >
             <img
               src="../Images/c4gragh.webp"
@@ -37,7 +37,8 @@ const Section2 = () => {
               }}
             />
           </Box>
-          <Box
+          <Box 
+           width={{xs:"40%",sm:"50%"}}
             sx={{
               position: "absolute",
               zIndex: "2",
@@ -51,9 +52,9 @@ const Section2 = () => {
               style={{ maxWidth: "100%", height: "auto" }}
             />
 
-            <Box
+            <Box 
               sx={{
-                width: "50%",
+              
                 position: "absolute",
                 zIndex: "1",
                 top: "-15px",
@@ -78,7 +79,8 @@ const Section2 = () => {
           <Typography
             variant="h2"
             marginBottom={3}
-            fontSize={{ lg: "60px", md: "45px" }}
+            marginTop={2}
+            fontSize={{ lg: "60px", md: "45px",sm:"40px",xs:"32px" }}
             lineHeight={1.1}
             maxWidth="450px"
             fontWeight={"bold"}
@@ -89,7 +91,7 @@ const Section2 = () => {
           <Typography
             variant="body1"
             marginBottom={3}
-            fontSize={{ lg: "18px", md: "12px" }}
+            fontSize={{ lg: "18px", md: "12px",sm:"10px" }}
             textAlign={"justify"}
           >
             You no longer need to worry because you have made a detailed, neat
@@ -103,7 +105,7 @@ const Section2 = () => {
           </Typography>
         </Box>
         <Box maxWidth={"fit-content"} sx={{ position: "relative" }}>
-          <Box width={{ xs: "280px", sm: "400px", md: "230px", lg: "250px" }}>
+          <Box marginBottom={2} width={{ xs: "280px", sm: "400px", md: "230px", lg: "250px" }}>
             <img
               src="../Images/c2.webp"
               alt=""

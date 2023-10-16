@@ -19,7 +19,8 @@ const Section3 = () => {
     <Box sx={{ margin: "50px 0" }}>
       <Box sx={{ position: "relative",}}
      >
-        <Box  display={{ xs:"block",sm:"none",md:"none",}} marginLeft={"1cm"}>
+        <Box  display={{ xs:"block",sm:"none",md:"none",}}
+         marginLeft={"1cm"}>
         <img
           src="../Images/d1.png"
           alt=""
@@ -27,7 +28,7 @@ const Section3 = () => {
            maxWidth: "80%",
             position: "absolute",
             right: "10%",
-            bottom: "-5cm",
+            bottom: "-60%",
           }}
         />
 
@@ -75,12 +76,12 @@ const Section3 = () => {
           alignItems={"center"}
           justifyContent={"flex-start"}
         >
-          <Typography
+          <Typography paddingTop={{ xs:"1.5cm",sm:"1.5cm",md:"3cm"}}
             variant="h2"
             fontWeight={"bold"}
             maxWidth={"600px"}
             fontSize={{xs:"32px", md: "45px", sm: "38px", lg: "58px" }}
-            sx={{paddingTop:"3cm"}}
+            
           >
             Business Plans Become More Targeted
           </Typography>
@@ -94,7 +95,7 @@ const Section3 = () => {
             identify opportunities for growth and develop a customized plan to
             help you achieve your goals.
           </Typography>
-          <Bluebtn>contact us</Bluebtn>
+          <Bluebtn >contact us</Bluebtn>
         </Box>
       </Box>
       {/* <Box  maxWidth={"50%"}>

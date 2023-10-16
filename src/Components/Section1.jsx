@@ -8,7 +8,7 @@ const Item = styled("div")(({ theme }) => ({
 const Section1 = () => {
   return (
     
-    <Box>
+    <Box >
       <Box sx={{ textAlign: "center", marginTop: "2cm" }}>
         <Typography variant="h5" sx={{ fontWeight: "bolder" }}>
           Trusted by the fastest growing companies{" "}

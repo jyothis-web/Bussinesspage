@@ -20,7 +20,7 @@ const Section4 = () => {
       marginTop={{ xs: "10cm", sm: "10px" }}
       flexDirection={{ xs: "column", sm: "row" }}
       justifyContent={"space-around"}
-      sx={{ backgroundColor: "#f3f7fe",paddingTop:"3cm" }}
+      sx={{ backgroundColor: "#f3f7fe",paddingTop:"1cm" }}
     >
       <Box position={"relative"}>
         {" "}
@@ -29,6 +29,7 @@ const Section4 = () => {
           fontWeight={"600"}
           maxWidth={"500px"}
           marginBottom={".6cm"}
+          fontSize={{ lg: "60px", md: "45px",sm:"40px",xs:"32px" }}
         >
           Features that you will love
         </Typography>
@@ -46,7 +47,7 @@ const Section4 = () => {
           Learn More
           <ArrowForwardIcon />
         </Button>
-        <Box position={"absolute"} left={{ xs: "0", sm: "-3cm" }} top={"8cm"}>
+        <Box position={"absolute"} left={{ xs: "0", sm: "-3cm" }} top={{ xs:"4.6cm",sm:"8cm",md:"8cm"}}>
           <img
             src="../Images/i1.webp"
             alt=""
@@ -73,7 +74,7 @@ const Section4 = () => {
       <Box
         display={"flex"}
         flexDirection={"column"}
-        marginTop={{ xs: "550px", sm: "0px" }}
+        marginTop={{ xs: "450px", sm: "0px" }}
       >
         {" "}
         <Card
