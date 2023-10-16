@@ -112,20 +112,20 @@ const Section2 = () => {
               style={{ maxWidth: "100%", height: "auto" }}
             />
             <Box
-              width={{ xs: "2.3cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
-              height={{ xs: "2.3cm", md: "2cm", lg: "2.3cm" }}
+              width={{ xs: "2cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
+              height={{ xs: "2cm", md: "2cm", lg: "2.3cm" }}
               position={"absolute"}
-              bottom={{ lg: ".1cm", md: "-4cm", sm: ".1cm" }}
+              bottom={{ lg: ".1cm", md: "-3.6cm", sm: ".4cm", }}
               left={{ lg: "-4.6cm", md: "0cm", sm: "-4.6cm" }}
               sx={{
                 backgroundColor: "#C6E6F7",
               }}
             ></Box>
             <Box
-              width={{ xs: "2.3cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
-              height={{ xs: "2.3cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
+              width={{ xs: "2cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
+              height={{ xs: "2cm", sm: "2.3cm", md: "2cm", lg: "2.3cm" }}
               position={"absolute"}
-              bottom={{ lg: "-2.3cm" }}
+              bottom={{ xs:"-1.5cm", lg: "-2.3cm" }}
               left={{ lg: "-2.3cm", md: "-2cm", sm: "-2.3cm" }}
               sx={{
                 backgroundColor: "#3E64FF",
