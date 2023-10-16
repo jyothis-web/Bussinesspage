@@ -12,7 +12,7 @@ import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
+//import useScrollTrigger from "@mui/material/useScrollTrigger";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-scroll";
 import { Link as Linkrouter } from "react-router-dom";
@@ -26,7 +26,7 @@ function App() {
     top: false,
   });
 
-  const trigger = useScrollTrigger({ threshold: 0 });
+  //const trigger = useScrollTrigger({ threshold: 0 });
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&

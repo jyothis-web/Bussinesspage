@@ -1,6 +1,6 @@
 //import { Box, Stack } from "@mui/material";
 import "./App.css";
-import Banner from "./Components/Banner";
+//import Banner from "./Components/Banner";
 //import Logoside from "./Components/Logoside";
 //import Middleside from "./Components/Middleside";
 //import Customnavbar from './Components/Customnavbar';
@@ -18,7 +18,7 @@ import Banner from "./Components/Banner";
 //import Profile from './Components/Profile';
 //import Rightside from "./Components/Rightside";
 //import Navbar from'./Components/Navbar';
-import {Route,Routes, Link } from "react-router-dom";
+import {Route,Routes } from "react-router-dom";
 import Blog from "./Components/Blog";
 
 import Home from "./Components/Home";
