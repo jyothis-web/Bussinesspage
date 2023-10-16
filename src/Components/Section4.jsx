@@ -74,7 +74,7 @@ const Section4 = () => {
       <Box
         display={"flex"}
         flexDirection={"column"}
-        marginTop={{ xs: "450px", sm: "0px" }}
+        marginTop={{ xs: "380px", sm: "0px" }}
       >
         {" "}
         <Card
