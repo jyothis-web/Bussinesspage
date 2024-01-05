@@ -1,7 +1,30 @@
 /* .App {
   text-align: center;
 } */
-
+.btn{
+  border:none;
+  outline:none;
+  background:none;
+  font-size: "18px";
+}
+.btn:hover{
+  color: #3E64FF;
+}
+.bluebtn{
+  border:none;
+  outline:none;
+  background:#3E64FF;
+  padding: 0px 24px 0px 10px;
+  height: 35px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 335px;
+  text-transform: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

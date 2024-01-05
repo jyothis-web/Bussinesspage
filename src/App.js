@@ -13,47 +13,34 @@ import "./App.css";
 // import Section6 from "./Components/Section6";
 // import Section7 from "./Components/Section7";
 
-
 //import Hello from'./Components/Hello';
 //import Profile from './Components/Profile';
 //import Rightside from "./Components/Rightside";
 //import Navbar from'./Components/Navbar';
-import {Route,Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Blog from "./Components/Blog";
 
-import Home from "./Components/Home";
-
-
+import Home from "./Pages/Homepage/Home";
+import UserRegister from "./UserAuth/UserRegister/UserRegister";
+import UserLogin from "./UserAuth/UserLogin/UserLogin";
+import UserHomepage from "./Pages/Homepage/UserHomepage";
+import PasswordResetPage from "./UserAuth/PasswordReset/PasswordResetPage";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 
 function App() {
- 
   return (
     <div className="App">
-      {/* <Hello name="arun" lastname="ev"/>
-      <Hello name="arjun" lastname="ashokan"/> */}
-      {/* <Hello/> */}
-      {/* <Profile/> */}
-      
-      {/* <Customnavbar/> */}
-      {/* <Rightside /> */}
-
-<Routes>
-  <Route path="/" element={<Home/>}/>
-  <Route path="/Blog" element={<Blog/>}/>
-</Routes>
-
-      {/* <Navbar/>
-      <Banner/>
-      <Section1/>
-      <Section2/>
-      <Section3/>
-      <Section4/>
-      <Section5/>
-      <Section6/>
-      <Section7/>
-      <Footer/>
-      <Blog/> */}
-      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/UserHomepage" element={<UserHomepage />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/UserRegister" element={<UserRegister />} />
+        <Route path="/UserRegister" element={<UserRegister />} />
+        <Route path="/UserLogin" element={<UserLogin/>} />
+        <Route path="/PasswordResetPage" element={<PasswordResetPage/>} />
+        <Route path="/UserProfile" element={<UserProfile/>} />
+        
+      </Routes>
     </div>
   );
 }

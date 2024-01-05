@@ -1,8 +1,15 @@
 import { Box, Grid } from "@mui/material";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+//import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import "../Components/footer.css";
 
 const Footer = () => {
+  const whatsappNumber = "9846706631"; // Replace with your desired WhatsApp number
+
+  const openWhatsAppChat = () => {
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+    window.open(whatsappUrl, "_blank");
+  };
   return (
     <div className="footer" style={{ backgroundColor: "#050a34" }}>
       <Grid
@@ -43,7 +50,8 @@ const Footer = () => {
             justifyContent={"space-between"}
             color={"white"}
           >
-            <FacebookOutlinedIcon
+<button onClick={openWhatsAppChat}>
+            <WhatsAppIcon
               sx={{
                 fontSize: "20px",
                 padding: "5px",
@@ -51,7 +59,9 @@ const Footer = () => {
                 borderSpacing: "10px",
                 borderRadius: "50%",
               }}
+            
             />
+         </button>
             <i
               class="fa-brands fa-twitter"
               style={{
@@ -62,6 +72,11 @@ const Footer = () => {
                 borderRadius: "50%",
               }}
             ></i>
+                         <a
+    href="https://www.instagram.com/jyothiswarup__?igsh=MTNiYzNiMzkwZA=="
+    target="_blank"
+    rel="noopener noreferrer"
+  >
             <i
               class="fa-brands fa-instagram"
               style={{
@@ -72,6 +87,7 @@ const Footer = () => {
                 borderRadius: "50%",
               }}
             ></i>
+            </a>
           </Box>
         </Grid>
         <Grid
@@ -122,7 +138,7 @@ const Footer = () => {
       <p
         style={{ color: "whitesmoke", textAlign: "center", paddingBottom: "1.5cm" }}
       >
-        Copyright: © 2023 sample project by jyothiswarup. All Rights
+        Copyright: © 2023  project by jyothiswarup. All Rights
         Reserved
       </p>
     </div>

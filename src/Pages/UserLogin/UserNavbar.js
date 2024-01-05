@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Typography,
+
   AppBar,
   Toolbar,
   styled,
@@ -16,13 +16,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-scroll";
 import { Link as Linkrouter } from "react-router-dom";
-import "../Components/navbar.css";
+import "../../Components/navbar.css";
 // import Navscroll1, {Navscroll1} from "../Components/Navscroll.js"
 import Headroom from "react-headroom";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { motion } from "framer-motion";
+import UserProfileMenu from "./UserProfileMenu";
 
-function App() {
+function UserNavbar() {
   const [state, setState] = React.useState({
     top: false,
   });
@@ -114,20 +115,19 @@ function App() {
           </ListItemButton>
         </Linkrouter>
       </List>
-      <Linkrouter to="/UserRegister">
-        <Typography
-          sx={{
-            backgroundColor: "blue",
-            color: "white",
-            borderRadius: "8px",
-            textAlign: "center",
-            padding: 1,
-            margin: 2,
-          }}
-        >
-          Sign In
-        </Typography>{" "}
-      </Linkrouter>
+
+      {/* <Typography
+        sx={{
+          backgroundColor: "blue",
+          color: "white",
+          borderRadius: "8px",
+          textAlign: "center",
+          padding: 1,
+          margin: 2,
+        }}
+      >
+        Sign In
+      </Typography> */}
     </Box>
   );
 
@@ -143,16 +143,16 @@ function App() {
     display: "flex",
     rowGap: "6px",
   }));
-  const Bluebtn = styled(Button)({
-    backgroundColor: "#3E64FF",
-    textTransform: "none",
-    padding: "8px 25px",
-    borderRadius: "8px",
-    fontWeight: "bold",
-    color: "white",
-    fontSize: "16px",
-    "&:hover": { backgroundColor: "blue" },
-  });
+  // const Bluebtn = styled(Button)({
+  //   backgroundColor: "#3E64FF",
+  //   textTransform: "none",
+  //   padding: "8px 25px",
+  //   borderRadius: "8px",
+  //   fontWeight: "bold",
+  //   color: "white",
+  //   fontSize: "16px",
+  //   "&:hover": { backgroundColor: "blue" },
+  // });
 
   const Logobtn = styled(Button)({
     textTransform: "none",
@@ -251,19 +251,12 @@ function App() {
                 </Linkrouter>
               </Middle>
               <Right sx={{ display: { sm: "none", xs: "none", md: "block" } }}>
-                <Linkrouter to="/UserLogin">
-                  {" "}
-                  <Logobtn
-                    Logobtn
-                    variant="text"
-                    style={{ marginRight: "15px" }}
-                  >
-                    Log In
-                  </Logobtn>
-                </Linkrouter>
-                <Linkrouter to="/UserRegister">
-                  <Bluebtn> Sign Up</Bluebtn>
-                </Linkrouter>
+                
+                <UserProfileMenu/>
+               {/* <Logobtn Logobtn variant="text" style={{ marginRight: "15px" }}>
+                  Log In
+                </Logobtn>
+                <Linkrouter to="/UserRegister"><Bluebtn> Sign Up</Bluebtn></Linkrouter> */}
               </Right>
             </StyledToolbar>
           </Box>
@@ -338,4 +331,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserNavbar;
