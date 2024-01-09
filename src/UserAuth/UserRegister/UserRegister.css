@@ -9,3 +9,8 @@
     background: #fff;
     padding: 0px 24px 0px 10px;
 }
+@media (max-width: 450px) {
+    .signup-card{
+        transform: scale(.8);
+    } 
+}

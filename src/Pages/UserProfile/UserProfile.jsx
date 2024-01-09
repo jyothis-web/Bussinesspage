@@ -27,7 +27,12 @@ const UserProfile = () => {
         <div>Loading...</div>
       ) : (
        
-        <div style={{display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}>
           <Card
             sx={{
               position: "relative",

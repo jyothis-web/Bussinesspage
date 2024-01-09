@@ -50,7 +50,12 @@ const UserLogin = () => {
 
 
   return (
-    <div style={{paddingLeft:"30%",paddingTop:"3%"}}>
+    <div  style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100vh",
+    }}>
       {" "}
       <Toaster
         containerStyle={{

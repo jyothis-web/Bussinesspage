@@ -32,6 +32,7 @@ const Section5 = () => {
           slidesPerView={3}
           spaceBetween={30}
           loop={true}
+          autoplay
           className="mySwiper"
         >
           <SwiperSlide>

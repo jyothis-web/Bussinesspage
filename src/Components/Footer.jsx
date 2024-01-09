@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, IconButton } from "@mui/material";
 //import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import "../Components/footer.css";
@@ -50,9 +50,10 @@ const Footer = () => {
             justifyContent={"space-between"}
             color={"white"}
           >
-<button onClick={openWhatsAppChat}>
+<IconButton onClick={openWhatsAppChat}>
             <WhatsAppIcon
               sx={{
+                backgroundColor:"green",
                 fontSize: "20px",
                 padding: "5px",
                 border: "1px solid",
@@ -61,7 +62,7 @@ const Footer = () => {
               }}
             
             />
-         </button>
+         </IconButton>
             <i
               class="fa-brands fa-twitter"
               style={{
