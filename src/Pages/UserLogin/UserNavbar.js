@@ -114,6 +114,7 @@ function UserNavbar() {
             <ListItemText>Blog </ListItemText>
           </ListItemButton>
         </Linkrouter>
+      
       </List>
 
       {/* <Typography
@@ -154,7 +155,7 @@ function UserNavbar() {
   //   "&:hover": { backgroundColor: "blue" },
   // });
 
-  const Logobtn = styled(Button)({
+  const button = styled(Button)({
     textTransform: "none",
     color: "black",
     fontSize: "17px",
@@ -196,7 +197,7 @@ function UserNavbar() {
                 <img src="../Images/logo.webp" alt="" width={"120px"} />
               </div>
               <Middle sx={{ display: { sm: "none", xs: "none", md: "block" } }}>
-                <Logobtn Logobtn variant="text">
+                <button variant="text">
                   <Link
                     activeClass="active"
                     to="Home"
@@ -206,9 +207,9 @@ function UserNavbar() {
                   >
                     Home
                   </Link>
-                </Logobtn>
+                </button>
 
-                <Logobtn Logobtn variant="text">
+                <button button variant="text">
                   <div className="link">
                     <Link
                       activeClass="active"
@@ -220,8 +221,8 @@ function UserNavbar() {
                       Insights
                     </Link>
                   </div>
-                </Logobtn>
-                <Logobtn Logobtn variant="text">
+                </button>
+                <button button variant="text">
                   <Link
                     activeClass="active"
                     to="Bussiness Plans"
@@ -231,8 +232,8 @@ function UserNavbar() {
                   >
                     Bussiness Plans
                   </Link>
-                </Logobtn>
-                <Logobtn Logobtn variant="text">
+                </button>
+                <button button variant="text">
                   <Link
                     activeClass="active"
                     to="Features"
@@ -242,22 +243,23 @@ function UserNavbar() {
                   >
                     Features
                   </Link>
-                </Logobtn>
+                </button>
                 <Linkrouter to="/Blog" style={{ textDecoration: "none" }}>
-                  <Logobtn Logobtn variant="text">
+                  <button button variant="text">
                     {" "}
                     Blog{" "}
-                  </Logobtn>
+                  </button>
                 </Linkrouter>
               </Middle>
               <Right sx={{ display: { sm: "none", xs: "none", md: "block" } }}>
                 
                 <UserProfileMenu/>
-               {/* <Logobtn Logobtn variant="text" style={{ marginRight: "15px" }}>
+               {/* <button button variant="text" style={{ marginRight: "15px" }}>
                   Log In
-                </Logobtn>
+                </button>
                 <Linkrouter to="/UserRegister"><Bluebtn> Sign Up</Bluebtn></Linkrouter> */}
               </Right>
+              
             </StyledToolbar>
           </Box>
         </Headroom>

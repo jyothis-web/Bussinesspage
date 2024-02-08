@@ -10,6 +10,7 @@ import {
   SwipeableDrawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import UserProfileMenu from "../Pages/UserLogin/UserProfileMenu";
 
 const Customnavbar = () => {
 
@@ -88,6 +89,7 @@ const Customnavbar = () => {
             <Button onClick={() => setopen(true)}>
               <MenuIcon sx={{ color: "black" }} />{" "}
             </Button>
+            <UserProfileMenu/>
             <Drawer
               
               

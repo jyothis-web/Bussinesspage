@@ -22,7 +22,7 @@ const PasswordResetPage = () => {
         duration: 2000,
       });
       setTimeout(() => {
-        navigate("/UserLogin");
+        navigate("/PasswordNavigatePage");
       }, 2000);
     } catch (error) {
       console.log(error.message);
@@ -53,7 +53,7 @@ const PasswordResetPage = () => {
             variant="contained"
             onClick={forgotPasswordSubmit}
           >
-            Log in
+            Send Email
           </Button>
         </div>
       </Card>

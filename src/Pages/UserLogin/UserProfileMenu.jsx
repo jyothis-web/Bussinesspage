@@ -51,6 +51,7 @@ const handleLogout = ()=>{
         }}
       >
        <Link to="/UserProfile"> <MenuItem onClick={handleClose}>My account</MenuItem></Link>
+       <Link to="/UserAppoiment"> <MenuItem onClick={handleClose}>Appoiment</MenuItem></Link>
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>

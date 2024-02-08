@@ -3,12 +3,12 @@ import { Button, Card } from "@mui/material";
 import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
 import "../UserLogin/UserLogin.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserAuthContext } from "../../Context/UserAuthContext";
 import toast, { Toaster } from "react-hot-toast";
 const UserLogin = () => {
   const navigate = useNavigate();
-  const { loginUser, googleSignIn,} =
+  const { loginUser, googleSignIn,handleRedirectResult} =
     useContext(UserAuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +47,14 @@ const UserLogin = () => {
     }
   };
 
-
+  useEffect(() => {
+    const checkRedirectResult = async () => {
+      // Call this function when your app loads to check for a redirect result
+      await handleRedirectResult();
+    };
+  
+    checkRedirectResult();
+  }, [handleRedirectResult]);
 
   return (
     <div  style={{

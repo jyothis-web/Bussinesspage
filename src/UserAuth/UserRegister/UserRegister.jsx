@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import GoogleButton from "react-google-button";
 //  import { signInWithPopup } from "firebase/auth";
 //  import { auth, provider } from "../../Firebase";
@@ -9,8 +9,8 @@ import { UserAuthContext } from "../../Context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const UserRegister = () => {
-
-  const {signupUser,googleSignIn } = useContext(UserAuthContext);
+  const { signupUser, googleSignIn, handleRedirectResult } =
+    useContext(UserAuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,22 +39,32 @@ const UserRegister = () => {
       }
     }
   };
-  const HandleGoogleSignIn = async()=>{
+  const HandleGoogleSignIn = async () => {
     try {
       await googleSignIn(email, password);
       navigate("/UserHomepage");
     } catch (error) {
-     console.log(error.message);
+      console.log(error.message);
     }
-  }
+  };
+  useEffect(() => {
+    const checkRedirectResult = async () => {
+      // Call this function when your app loads to check for a redirect result
+      await handleRedirectResult();
+    };
+
+    checkRedirectResult();
+  }, [handleRedirectResult]);
 
   return (
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "100vh",
-    }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
       <form onSubmit={handleSubmit}>
         {error && <Alert variant="danger">{error}</Alert>}
         <Card
@@ -71,8 +81,8 @@ const UserRegister = () => {
           <h2>Signup Page</h2>
 
           <input
-          //type={option ? "email" : "tel"}
-          type="email"
+            //type={option ? "email" : "tel"}
+            type="email"
             name="email"
             placeholder="email"
             value={email}
@@ -84,14 +94,12 @@ const UserRegister = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="bluebtn">
-            Sign up
-          </button>
-     
+          <button className="bluebtn">Sign up</button>
+
           {/* {value ? (
             <UserHomepage />
           ) : ( */}
-          <GoogleButton  onClick={HandleGoogleSignIn}></GoogleButton>
+          <GoogleButton onClick={HandleGoogleSignIn}></GoogleButton>
           {/* )} */}
 
           <div>

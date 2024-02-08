@@ -7,10 +7,15 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
+  signInWithRedirect,
+  getRedirectResult,
 } from "firebase/auth";
 import { auth } from "../Firebase";
 import { storage } from "../Firebase";
+import { getToken,getMessaging } from "@firebase/messaging";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export const UserAuthContext = createContext();
 
@@ -20,6 +25,8 @@ export const UserAuthContextProvider = ({ children }) => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [fcmToken, setFcmToken] = useState(null);
+  const navigate = useNavigate();
 
   const storageKey = `userProfileImageUrl_${userUid}`;
 
@@ -39,9 +46,36 @@ export const UserAuthContextProvider = ({ children }) => {
   };
 
   //by using google account
+  // const googleSignIn = () => {
+  //   const googleauthprovider = new GoogleAuthProvider();
+  //   return signInWithPopup(auth, googleauthprovider);
+  // };
   const googleSignIn = () => {
-    const googleauthprovider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleauthprovider);
+    const googleAuthProvider = new GoogleAuthProvider();
+
+    // Check if the user is on a mobile or tablet device
+    const isMobileOrTablet = window.innerWidth <= 768; // You can adjust this threshold as needed
+
+    // Use signInWithPopup for computers and signInWithRedirect for mobile and tablet devices
+    if (isMobileOrTablet) {
+      return signInWithRedirect(auth, googleAuthProvider);
+    } else {
+      return signInWithPopup(auth, googleAuthProvider);
+    }
+  };
+
+  const handleRedirectResult = async () => {
+    await getRedirectResult(auth)
+      .then((result) => {
+        // The signed-in user info is available in the result object
+        const user = result.user;
+        console.log(user);
+        navigate("/UserHomepage");
+      })
+      .catch((error) => {
+        // Handle errors during redirect
+        console.error(error);
+      });
   };
 
   //for forgot password by email
@@ -67,6 +101,7 @@ export const UserAuthContextProvider = ({ children }) => {
           setUrl(downloadURL);
           localStorage.setItem(storageKey, downloadURL);
           console.log("updated successfully", downloadURL);
+          toast.success(" profile image updated successfully");
         })
         .catch((error) => {
           console.log(error.message, "image url not found");
@@ -89,6 +124,22 @@ export const UserAuthContextProvider = ({ children }) => {
       setLoading(false); // Set loading to false even if the default URL is used
     }
   }, [storageKey, user]);
+
+
+ 
+
+  useEffect(() => {
+    const getFCMToken = async () => {
+      try {
+        const token = await getToken(getMessaging());
+        setFcmToken(token);
+      } catch (error) {
+        console.error('Error getting FCM token:', error);
+      }
+    };
+
+    getFCMToken();
+  }, []);
 
   // useEffect(() => {
   //   const storedUrl = localStorage.getItem(storageKey);
@@ -130,6 +181,7 @@ export const UserAuthContextProvider = ({ children }) => {
           userUid,
           url,
           loading,
+          fcmToken,
           signupUser,
           loginUser,
           logoutUser,
@@ -137,6 +189,7 @@ export const UserAuthContextProvider = ({ children }) => {
           passwordResetForUser,
           handleProfileSubmit,
           handleImageChange,
+          handleRedirectResult,
         }}
       >
         {children}

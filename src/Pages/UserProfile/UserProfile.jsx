@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { Avatar, Button, Card } from "@mui/material";
 import { UserAuthContext } from "../../Context/UserAuthContext";
+import { Toaster } from "react-hot-toast";
 
 const UserProfile = () => {
   const {
@@ -17,7 +18,8 @@ const UserProfile = () => {
   // console.log(userUid, user, url);
 
   const displayName = user?.displayName || "";
-  const orginalurl =url  ||" https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png";
+  const orginalurl =
+    url || " https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png";
   //console.log( 'orginal image',orginalurl);
   //  console.log(user);
 
@@ -26,27 +28,36 @@ const UserProfile = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-       
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-        }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          {" "}
+          <Toaster
+            containerStyle={{
+              position: "absolute",
+              top: "0px",
+              left: "-60px",
+            }}
+          />
           <Card
             sx={{
               position: "relative",
               width: "250px",
               display: "flex",
               alignItems: "center",
-              flexDirection:"column",
-              paddingTop:"30px",
-              gap:"20px",
-              marginTop:"10%",
+              flexDirection: "column",
+              paddingTop: "30px",
+              gap: "20px",
+              marginTop: "10%",
             }}
           >
             <Avatar
-              src={ orginalurl}
+              src={orginalurl}
               alt=""
               style={{
                 width: "100px",
@@ -78,7 +89,6 @@ const UserProfile = () => {
             <Button onClick={handleProfileSubmit}>update</Button>
           </Card>
         </div>
-
       )}
     </div>
   );
