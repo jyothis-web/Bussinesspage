@@ -137,7 +137,7 @@ const Footer = () => {
         </Grid>
       </Grid>
       <p
-        style={{ color: "whitesmoke", textAlign: "center", paddingBottom: "1.5cm" }}
+        style={{ color: "whitesmoke", textAlign: "center", paddingBottom: "1.5cm",marginBottom:"-20px"}}
       >
         Copyright: © 2023  project by jyothiswarup. All Rights
         Reserved

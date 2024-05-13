@@ -4,7 +4,7 @@ import Rating from "@mui/material/Rating";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// import "swiper/css";
 import "./swiper.css";
 
 const Section5 = () => {
