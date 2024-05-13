@@ -155,13 +155,6 @@ function UserNavbar() {
   //   "&:hover": { backgroundColor: "blue" },
   // });
 
-  const button = styled(Button)({
-    textTransform: "none",
-    color: "black",
-    fontSize: "17px",
-
-    "&:hover": { backgroundColor: "#f3f7fe", color: "blue" },
-  });
   const Menubtn = styled(IconButton)({
     color: "#f3f7fe",
     background: "none",
